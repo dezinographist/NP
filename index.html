@@ -1060,54 +1060,9 @@ h2.section-title em {
       <h2>Claim your <em>Founder's Promise</em> offer.</h2>
       <p class="sub">Free in-home evaluation. Zero obligation. We respond within one business day.</p>
 
-      <form onsubmit="return submitLead(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" required>
-          </div>
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-
-        <div class="form-group">
-          <label for="address">Full Home Address</label>
-          <input type="text" id="address" name="address" placeholder="Street, City, State, ZIP" required>
-        </div>
-
-        <div class="form-group">
-          <label for="heating">Current Heating Source</label>
-          <select id="heating" name="heating" required>
-            <option value="">Select one…</option>
-            <option value="oil">Heating Oil</option>
-            <option value="propane">Propane</option>
-            <option value="electric">Electric Baseboard</option>
-            <option value="gas">Natural Gas</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <button type="submit" class="submit-btn">
-          Secure My Founder's Promise Offer →
-        </button>
-
-        <p class="form-trust">🔒 Your information stays with NP Environmental.</p>
-
-        <div class="form-divider">or call us directly</div>
-        <a href="tel:3158418730" class="phone-link">📞 315-841-8730</a>
-      </form>
+      <div style="margin: 0 -34px -38px; overflow: hidden; border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+        <iframe src="https://forms.ms/4auzR5S" width="650" height="500" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25); display: block; width: 100%; max-width: 100%;"></iframe>
+      </div>
     </div>
 
   </div>
@@ -1200,6 +1155,10 @@ h2.section-title em {
 <section class="google-rating">
   <div class="container">
     <span class="section-eyebrow">What homeowners are saying</span>
+
+    <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+      <img src="Google_reviews.svg" alt="Google Reviews" style="width: 260px; max-width: 90%; opacity: 0.92; filter: drop-shadow(0 4px 16px rgba(14,47,107,0.10));">
+    </div>
 
     <div class="rating-hero">
       <div class="rating-stars">★★★★★</div>
@@ -1482,33 +1441,6 @@ h2.section-title em {
   </div>
 </footer>
 
-<script>
-function submitLead(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = Object.fromEntries(new FormData(form));
-
-  // TODO: Replace with GoHighLevel / CRM webhook
-  // Fire Meta Pixel: fbq('track', 'Lead');
-  console.log('Lead submitted:', data);
-
-  const card = form.closest('.lead-card');
-  card.innerHTML = `
-    <div style="text-align:center; padding: 20px 8px;">
-      <div style="width:80px; height:80px; background:linear-gradient(135deg,var(--np-green),var(--np-blue));border-radius:50%;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      </div>
-      <h2 style="font-family:var(--display);font-size:28px;font-weight:600;color:var(--np-blue-deep);margin-bottom:14px;letter-spacing:-0.5px;">Thank you, ${data.fname}.</h2>
-      <p style="color:var(--ink-soft);line-height:1.65;font-size:16px;">A member of Nick &amp; Janelle's team will be in touch within one business day on <strong style="color:var(--np-blue-deep)">${data.phone}</strong> to schedule your free in-home evaluation.</p>
-      <p style="margin-top:22px;font-size:14.5px;color:var(--ink-soft);">If you'd rather chat now:</p>
-      <a href="tel:3158418730" style="display:inline-flex;align-items:center;gap:10px;margin-top:12px;background:var(--np-blue);color:white;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;">
-        📞 315-841-8730
-      </a>
-    </div>
-  `;
-  return false;
-}
-</script>
 
 </body>
 </html>
